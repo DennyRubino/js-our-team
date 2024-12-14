@@ -38,4 +38,21 @@ const teamMembers = [
   ];
   //ID'S ELEMENT//
   const teamContainer = document.getElementById("teamContainer");
+
+   //CREO UNA FUNZIONE PER CREARE LE CARD//
+   function createTeamCards() {
+    teamMembers.forEach(member => {
+      const card = document.createElement("div");
+      card.classList.add("team-card");
+      card.innerHTML = `
+        <img src="${member.img}" alt="${member.name}">
+        <h3>${member.name}</h3>
+        <p><strong>${member.role}</strong></p>
+        <a>${member.email}</a>
+      `;
+  teamContainer.appendChild(card);
+  });
+  }
+  createTeamCards();
+  
   
